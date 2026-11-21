@@ -1,7 +1,7 @@
 // ==============================================================================
 // Page: app/(public)/vagas/[slug]/candidatura/page.tsx
 // Projeto: Portal de Vagas & Mini-ATS — RF Distribuidora
-// Descrição: Shell da página de envio de candidatura para a vaga selecionada
+// Descrição: Página pública de envio de candidatura para a vaga selecionada
 // ==============================================================================
 
 import React from 'react';
@@ -9,8 +9,9 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { createServerClient } from '@/lib/supabase/client';
-import type { Vaga } from '@/lib/supabase/types';
-import { ArrowLeft, FileText, ShieldCheck, MapPin } from 'lucide-react';
+import type { Vaga, PerguntaTriagem } from '@/lib/supabase/types';
+import { FormularioCandidatura } from '@/components/vagas/FormularioCandidatura';
+import { ArrowLeft, MapPin } from 'lucide-react';
 
 interface CandidaturaPageProps {
   params: {
@@ -62,6 +63,8 @@ export default async function CandidaturaPage({ params }: CandidaturaPageProps) 
     notFound();
   }
 
+  const perguntasTriagem = (vaga.perguntas_triagem as PerguntaTriagem[]) || [];
+
   return (
     <main className="min-h-screen bg-gray-50 pb-16">
       {/* Header com Navegação */}
@@ -103,23 +106,8 @@ export default async function CandidaturaPage({ params }: CandidaturaPageProps) 
           </div>
         </div>
 
-        {/* Placeholder do Formulário Inteligente (Implementação completa na Etapa 6) */}
-        <div
-          id="formulario-candidatura-container"
-          className="bg-white rounded-xl border border-gray-200 p-8 shadow-sm text-center"
-        >
-          <FileText className="w-12 h-12 text-rf-vermelho mx-auto mb-4" />
-          <h3 className="text-lg font-bold text-rf-cinza mb-2">
-            Área de Envio de Candidatura
-          </h3>
-          <p className="text-sm text-gray-500 max-w-md mx-auto mb-6">
-            O componente de formulário com triagem dinâmica, upload de currículo em PDF e consentimento LGPD está preparado para ativação na Etapa 6.
-          </p>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 rounded-lg text-xs font-semibold border border-emerald-200">
-            <ShieldCheck className="w-4 h-4" />
-            Vaga ID validada: {vaga.id}
-          </div>
-        </div>
+        {/* Formulário Inteligente de Candidatura */}
+        <FormularioCandidatura vagaId={vaga.id} perguntas={perguntasTriagem} />
       </div>
     </main>
   );
