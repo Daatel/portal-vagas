@@ -12,6 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         rf: {
+          verde: "#0F382A",
+          dourado: "#CBA358",
+          "verde-escuro": "#0A261C",
           vermelho: "#C0392B",
           cinza: "#2C3E50",
           branco: "#FFFFFF",

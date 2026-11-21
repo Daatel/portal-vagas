@@ -74,10 +74,12 @@ export async function submitCandidatura(formData: FormData): Promise<SubmitCandi
     const whatsapp = (formData.get('whatsapp') as string)?.trim();
     const email = (formData.get('email') as string)?.trim() || null;
     const bairro = (formData.get('bairro') as string)?.trim();
-    const cidade = (formData.get('cidade') as string)?.trim();
-    const perguntaAberta = (formData.get('pergunta_aberta') as string)?.trim();
+    const cidade = (formData.get('cidade') as string)?.trim() || 'Rio de Janeiro';
+    const areaInteresse = (formData.get('area_interesse') as string)?.trim() || null;
+    const perguntaAbertaRaw = (formData.get('pergunta_aberta') as string)?.trim();
+    const perguntaAberta = perguntaAbertaRaw || (areaInteresse ? `Área de interesse: ${areaInteresse}` : 'Candidatura Direta Trabalhe Conosco');
 
-    if (!nome || !whatsapp || !bairro || !cidade || !perguntaAberta) {
+    if (!nome || !whatsapp || !bairro || !cidade) {
       return {
         success: false,
         error: 'Por favor, preencha todos os campos obrigatórios destacados com asterisco.',
@@ -93,6 +95,9 @@ export async function submitCandidatura(formData: FormData): Promise<SubmitCandi
       } catch (parseErr) {
         console.warn('Erro ao decodificar respostas_triagem JSON:', parseErr);
       }
+    }
+    if (areaInteresse && !respostasTriagem.area_interesse) {
+      respostasTriagem.area_interesse = areaInteresse;
     }
 
     // 4. Validação estrita do arquivo de currículo (PDF <= 5MB)

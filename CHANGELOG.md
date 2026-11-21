@@ -2,6 +2,23 @@
 
 ---
 
+## v1.1 — 2026-11-21 (Sessão: Simplificação Direta do Trabalhe Conosco — Formulário Ágil de Candidatura)
+
+### 🚀 Interface Pública (`app/(public)/vagas/page.tsx` & `components/vagas/FormularioDireto.tsx`)
+- **Remoção de Banners Genéricos:** Eliminação completa dos textos de marketing e cartões vazios ("Cultura Colaborativa", "Oportunidade Real", etc.).
+- **Formulário Direto de Alta Conversão:** Implementação de tela única limpa e corporativa com a paleta oficial da RF (`#0F382A` e `#CBA358`), otimizada para celular:
+  - Nome Completo;
+  - WhatsApp (com formatação automática de máscara);
+  - E-mail (opcional);
+  - Bairro e Cidade;
+  - Área de Interesse (Dropdown com opções para Comercial, Logística, Frota, Administrativo);
+  - Anexo de Currículo (PDF com validação de tipo e trava de 5 MB);
+  - Consentimento LGPD transparente;
+  - Feedback imediato de confirmação com protocolo.
+- **Ajuste na Server Action (`app/actions/candidatura.ts`):** Tratamento dinâmico para gravação da área de interesse nas respostas de triagem e persistência no bucket privado do Supabase.
+
+---
+
 ## v1.0 — 2026-11-21 (Sessão: Implementação Integral do Portal de Vagas, ATS e Configuração Cloud)
 
 ### 🗄️ Banco de Dados & Infraestrutura Cloud (`supabase/` & Configurações)
