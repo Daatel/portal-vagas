@@ -8,7 +8,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { createServerClient } from '@/lib/supabase/client';
+import { createServerClient } from '@/lib/supabase/server';
 import type { Vaga, PerguntaTriagem } from '@/lib/supabase/types';
 import { FormularioCandidatura } from '@/components/vagas/FormularioCandidatura';
 import { ArrowLeft, MapPin } from 'lucide-react';

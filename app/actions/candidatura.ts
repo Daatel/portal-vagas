@@ -6,7 +6,7 @@
 // Descrição: Processamento seguro de candidaturas com validação LGPD, upload de PDF e persistência
 // ==============================================================================
 
-import { createAdminClient } from '@/lib/supabase/client';
+import { createAdminClient } from '@/lib/supabase/server';
 import type { EtapaFunil } from '@/lib/supabase/types';
 import { randomUUID } from 'crypto';
 

@@ -6,7 +6,7 @@
 
 import React from 'react';
 import type { Metadata } from 'next';
-import { createServerClient } from '@/lib/supabase/client';
+import { createServerClient } from '@/lib/supabase/server';
 import type { Vaga, DepartamentoVaga } from '@/lib/supabase/types';
 import { ListaVagas } from '@/components/vagas/ListaVagas';
 import Link from 'next/link';
