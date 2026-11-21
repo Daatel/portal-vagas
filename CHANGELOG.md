@@ -5,13 +5,17 @@
 ## v1.0 — 2026-11-21 (Sessão: Implementação Integral do Portal de Vagas, ATS e Configuração Cloud)
 
 ### 🗄️ Banco de Dados & Infraestrutura Cloud (`supabase/` & Configurações)
-- **Provedor:** Supabase Cloud (PostgreSQL 15+)
-- **Projeto:** `portal-vagas-rf`
+- **Provedor:** Supabase Cloud (PostgreSQL 17)
+- **Projeto:** `portal-vagas-rf` (`nwstweiyyxlnaeicclwl`)
+- **Project URL:** `https://nwstweiyyxlnaeicclwl.supabase.co`
 - **Região:** South America (São Paulo / `sa-east-1`)
 - **Database Password:** `Daatel#2026`
-- **Schemas e Migrations:**
-  - `001_create_vagas.sql`: Tabela `vagas` com controle de status, campos de triagem e índices otimizados.
-  - `002_create_candidatos.sql`: Tabela `candidatos` (funil ATS em 7 estágios, scorecard, consentimento LGPD), bucket privado de Storage `curriculos` (PDF ≤ 5MB) e políticas estritas de Row Level Security (RLS).
+- **Anon Public Key:** `sb_publishable_rk8JbxDcQLKMUTuVMOjB5w_KPCyfXd2`
+- **Tabelas e Objetos Provisionados:**
+  - `public.vagas`: Tabela de vagas, filtros, status e triggers de atualização.
+  - `public.candidatos`: Tabela de candidatos, funil ATS (7 estágios), notas de scorecard e consentimento LGPD.
+  - `storage.buckets ('curriculos')`: Bucket privado configurado com limite de 5MB e restrito a PDFs.
+  - `RLS (Row Level Security)`: Políticas de acesso público e autenticado ativadas e validadas.
 - **Repositório Oficial:** `https://github.com/Daatel/portal-vagas.git`
 
 ### 🚀 Mural Público e Inscrição de Candidatos (`app/(public)/`)
