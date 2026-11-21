@@ -10,6 +10,7 @@ import { notFound } from 'next/navigation';
 import { createAdminClient } from '@/lib/supabase/server';
 import type { Vaga } from '@/lib/supabase/types';
 import { FormularioVaga } from '@/components/admin/FormularioVaga';
+import { GeradorAnuncios } from '@/components/admin/GeradorAnuncios';
 
 interface AdminVagaActionPageProps {
   params: {
@@ -72,6 +73,12 @@ export default async function AdminVagaActionPage({
       </div>
 
       <FormularioVaga vagaExistente={vagaExistente} />
+
+      {vagaExistente && (
+        <div className="mt-8 max-w-4xl mx-auto">
+          <GeradorAnuncios vaga={vagaExistente} />
+        </div>
+      )}
     </main>
   );
 }
