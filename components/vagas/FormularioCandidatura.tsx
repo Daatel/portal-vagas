@@ -10,6 +10,7 @@ import React, { useState, useTransition } from 'react';
 import Link from 'next/link';
 import type { PerguntaTriagem } from '@/lib/supabase/types';
 import { submitCandidatura } from '@/app/actions/candidatura';
+import { TurnstileWidget } from '@/components/vagas/TurnstileWidget';
 import {
   UploadCloud,
   CheckCircle2,
@@ -44,6 +45,7 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
   const [curriculo, setCurriculo] = useState<File | null>(null);
   const [curriculoErro, setCurriculoErro] = useState<string | null>(null);
   const [aceiteLgpd, setAceiteLgpd] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   // Estados de resposta do envio
   const [feedbackErro, setFeedbackErro] = useState<string | null>(null);
@@ -107,6 +109,9 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
       formData.append('pergunta_aberta', perguntaAberta.trim());
       formData.append('respostas_triagem', JSON.stringify(respostasTriagem));
       formData.append('aceite_lgpd', aceiteLgpd ? 'true' : 'false');
+      if (turnstileToken) {
+        formData.append('turnstile_token', turnstileToken);
+      }
 
       if (curriculo) {
         formData.append('curriculo', curriculo);
@@ -410,6 +415,9 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
           </span>
         </label>
       </div>
+
+      {/* 6. Proteção Anti-Spam Turnstile */}
+      <TurnstileWidget onSuccess={(token) => setTurnstileToken(token)} />
 
       {/* Botão de Envio */}
       <div className="pt-4 border-t border-gray-100">

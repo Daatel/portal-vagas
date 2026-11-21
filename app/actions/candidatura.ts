@@ -29,6 +29,43 @@ export async function submitCandidatura(formData: FormData): Promise<SubmitCandi
       };
     }
 
+    // 1.1 Validação de Segurança Anti-Spam (Cloudflare Turnstile)
+    const turnstileToken = formData.get('turnstile_token') as string | null;
+    const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY;
+
+    if (turnstileSecretKey && turnstileSecretKey.trim()) {
+      if (!turnstileToken) {
+        return {
+          success: false,
+          error: 'Validação de segurança anti-robô obrigatória não concluída.',
+        };
+      }
+
+      try {
+        const verifyRes = await fetch(
+          'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+              secret: turnstileSecretKey,
+              response: turnstileToken,
+            }),
+          }
+        );
+
+        const outcome = await verifyRes.json();
+        if (!outcome.success) {
+          return {
+            success: false,
+            error: 'Falha na validação anti-robô. Atualize a página e tente novamente.',
+          };
+        }
+      } catch (cfErr) {
+        console.warn('Erro ao consultar API do Cloudflare Turnstile:', cfErr);
+      }
+    }
+
     // 2. Extração e sanitização dos campos de texto
     const vagaIdRaw = formData.get('vaga_id') as string | null;
     const vagaId = vagaIdRaw && vagaIdRaw.trim() !== '' && vagaIdRaw !== 'null' ? vagaIdRaw.trim() : null;
