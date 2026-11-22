@@ -43,13 +43,18 @@ export function AdminNavbar() {
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Identidade */}
+        {/* Identidade Oficial */}
         <div className="flex items-center gap-6">
-          <Link href="/admin" className="flex items-center gap-2">
-            <span className="font-extrabold text-lg tracking-tight text-rf-cinza">
-              RF <span className="text-rf-vermelho">DISTRIBUIDORA</span>
+          <Link href="/admin" className="flex items-center gap-2.5">
+            <img
+              src="/rf-monogram.png"
+              alt="RF Distribuidora"
+              className="h-8 w-auto object-contain"
+            />
+            <span className="font-extrabold text-base tracking-tight text-rf-green">
+              RF Distribuidora
             </span>
-            <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-gray-100 text-gray-600 border border-gray-200">
+            <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-emerald-50 text-rf-green border border-emerald-100">
               Admin ATS
             </span>
           </Link>
@@ -67,8 +72,8 @@ export function AdminNavbar() {
                   href={item.href}
                   className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
                     isActive
-                      ? 'bg-red-50 text-rf-vermelho font-bold'
-                      : 'text-gray-600 hover:text-rf-cinza hover:bg-gray-100'
+                      ? 'bg-emerald-50 text-rf-green font-bold border border-emerald-100'
+                      : 'text-gray-600 hover:text-rf-green hover:bg-gray-100'
                   }`}
                 >
                   {item.label}

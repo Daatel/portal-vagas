@@ -67,7 +67,7 @@ export function ListaVagas({ vagas }: ListaVagasProps) {
               placeholder="Buscar vagas por cargo ou região..."
               value={termoBusca}
               onChange={(e) => setTermoBusca(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho transition-all"
+              className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green transition-all"
             />
           </div>
 
@@ -87,8 +87,8 @@ export function ListaVagas({ vagas }: ListaVagasProps) {
                 disabled={isPending}
                 className={`px-4 py-2 rounded-lg text-xs md:text-sm font-medium transition-all ${
                   isSelected
-                    ? 'bg-rf-vermelho text-white shadow-sm'
-                    : 'bg-gray-100 text-gray-750 hover:bg-gray-200 text-gray-700'
+                    ? 'bg-rf-green text-white shadow-sm'
+                    : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
                 }`}
               >
                 {dep.label}
@@ -102,17 +102,17 @@ export function ListaVagas({ vagas }: ListaVagasProps) {
       {vagasFiltradas.length === 0 ? (
         <div className="bg-white rounded-xl border border-gray-200 p-12 text-center">
           <Briefcase className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-          <h3 className="text-lg font-semibold text-rf-cinza mb-2">
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">
             Nenhuma oportunidade aberta com estes filtros
           </h3>
           <p className="text-sm text-gray-500 max-w-md mx-auto mb-6">
-            Não encontramos vagas ativas para a seleção atual. Você pode cadastrar seu currículo diretamente em nosso Banco de Talentos.
+            Não encontramos vagas ativas para a seleção atual. Você pode cadastrar seu currículo diretamente em nosso formulário direto.
           </p>
           <Link
-            href="/banco-de-talentos"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-rf-cinza text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-all"
+            href="/vagas"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-rf-green hover:bg-rf-green-light text-white rounded-lg text-sm font-medium transition-all"
           >
-            Cadastrar no Banco de Talentos
+            Cadastrar Currículo
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -121,12 +121,12 @@ export function ListaVagas({ vagas }: ListaVagasProps) {
           {vagasFiltradas.map((vaga) => (
             <div
               key={vaga.id}
-              className="group bg-white rounded-xl border border-gray-200 hover:border-rf-vermelho/50 p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+              className="group bg-white rounded-xl border border-gray-200 hover:border-rf-gold/50 p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
             >
               <div>
                 {/* Badges de Topo */}
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-50 text-rf-vermelho border border-red-100">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-rf-green border border-emerald-100">
                     {vaga.departamento}
                   </span>
                   <span className="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-0.5 rounded">
@@ -135,7 +135,7 @@ export function ListaVagas({ vagas }: ListaVagasProps) {
                 </div>
 
                 {/* Título da Vaga */}
-                <h3 className="text-lg font-bold text-rf-cinza group-hover:text-rf-vermelho transition-colors mb-2 line-clamp-2">
+                <h3 className="text-lg font-bold text-gray-900 group-hover:text-rf-green transition-colors mb-2 line-clamp-2">
                   {vaga.titulo}
                 </h3>
 
@@ -158,7 +158,7 @@ export function ListaVagas({ vagas }: ListaVagasProps) {
                 </span>
                 <Link
                   href={`/vagas/${vaga.slug}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-rf-vermelho group-hover:translate-x-1 transition-transform"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-rf-green hover:text-rf-gold group-hover:translate-x-1 transition-all"
                 >
                   Ver Vaga e Candidatar
                   <ArrowRight className="w-3.5 h-3.5" />

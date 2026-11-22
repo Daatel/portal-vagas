@@ -130,11 +130,11 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
   // Tela de Sucesso
   if (sucessoCandidatoId) {
     return (
-      <div className="bg-white rounded-2xl border border-gray-200 p-8 md:p-12 shadow-sm text-center">
-        <div className="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-100">
-          <CheckCircle2 className="w-8 h-8" />
+      <div className="bg-white rounded-2xl border border-gray-100 p-8 md:p-12 shadow-sm text-center">
+        <div className="w-16 h-16 bg-rf-green/10 text-rf-green rounded-full flex items-center justify-center mx-auto mb-6 border border-rf-green/20">
+          <CheckCircle2 className="w-8 h-8 text-rf-green" />
         </div>
-        <h2 className="text-2xl font-extrabold text-rf-cinza mb-3">
+        <h2 className="text-2xl font-extrabold text-gray-900 mb-3 tracking-tight">
           Candidatura Recebida com Sucesso!
         </h2>
         <p className="text-sm text-gray-600 max-w-lg mx-auto mb-6 leading-relaxed">
@@ -142,14 +142,14 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
         </p>
 
         <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 max-w-md mx-auto mb-8 text-xs text-gray-500 flex items-center justify-center gap-2">
-          <ShieldCheck className="w-4 h-4 text-emerald-600" />
+          <ShieldCheck className="w-4 h-4 text-rf-green" />
           <span>Protocolo seguro: <strong>{sucessoCandidatoId}</strong></span>
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/vagas"
-            className="w-full sm:w-auto px-6 py-3 bg-rf-cinza text-white rounded-lg text-sm font-semibold hover:bg-gray-800 transition-colors inline-flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-6 py-3 bg-rf-green hover:bg-rf-green-light text-white rounded-xl text-sm font-semibold transition-all shadow-sm hover:shadow inline-flex items-center justify-center gap-2"
           >
             Ver outras vagas
             <ArrowRight className="w-4 h-4" />
@@ -160,7 +160,7 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-gray-200 p-6 md:p-10 shadow-sm space-y-8">
+    <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-gray-100 p-6 md:p-10 shadow-sm space-y-8">
       {/* Banner de Erro Geral */}
       {feedbackErro && (
         <div className="p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3 text-sm text-red-700">
@@ -171,8 +171,8 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
 
       {/* 1. Dados Pessoais */}
       <div>
-        <h3 className="text-base font-bold text-rf-cinza mb-4 flex items-center gap-2 border-b border-gray-100 pb-2">
-          <User className="w-4 h-4 text-rf-vermelho" />
+        <h3 className="text-base font-bold text-gray-900 mb-4 flex items-center gap-2 border-b border-gray-100 pb-2">
+          <User className="w-4 h-4 text-rf-green" />
           1. Dados Pessoais de Contato
         </h3>
 
@@ -187,7 +187,7 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
               value={nome}
               onChange={(e) => setNome(e.target.value)}
               placeholder="Digite seu nome completo"
-              className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho"
+              className="w-full px-4 py-2.5 text-sm bg-gray-50/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green"
             />
           </div>
 
@@ -203,7 +203,7 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
                 value={whatsapp}
                 onChange={(e) => setWhatsapp(e.target.value)}
                 placeholder="(21) 99999-9999"
-                className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho"
+                className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green"
               />
             </div>
           </div>
@@ -219,7 +219,7 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="seuemail@exemplo.com"
-                className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho"
+                className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green"
               />
             </div>
           </div>
@@ -236,7 +236,7 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
                 value={bairro}
                 onChange={(e) => setBairro(e.target.value)}
                 placeholder="Ex: Manilha, Alcântara, Barra..."
-                className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho"
+                className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green"
               />
             </div>
           </div>
@@ -251,7 +251,7 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
               value={cidade}
               onChange={(e) => setCidade(e.target.value)}
               placeholder="Ex: Itaboraí, São Gonçalo, Rio de Janeiro..."
-              className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho"
+              className="w-full px-4 py-2.5 text-sm bg-gray-50/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green"
             />
           </div>
         </div>
@@ -260,8 +260,8 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
       {/* 2. Perguntas Dinâmicas de Triagem (caso a vaga possua) */}
       {perguntas && perguntas.length > 0 && (
         <div>
-          <h3 className="text-base font-bold text-rf-cinza mb-4 flex items-center gap-2 border-b border-gray-100 pb-2">
-            <CheckCircle2 className="w-4 h-4 text-rf-vermelho" />
+          <h3 className="text-base font-bold text-gray-900 mb-4 flex items-center gap-2 border-b border-gray-100 pb-2">
+            <CheckCircle2 className="w-4 h-4 text-rf-green" />
             2. Perguntas de Triagem para a Vaga
           </h3>
 
@@ -269,14 +269,14 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
             {perguntas.map((p, idx) => (
               <div
                 key={p.id || idx}
-                className="bg-gray-50 p-4 rounded-xl border border-gray-200"
+                className="bg-gray-50/50 p-4 rounded-xl border border-gray-200"
               >
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs font-semibold text-gray-800">
                     {p.texto}
                   </span>
                   {p.eliminatoria && (
-                    <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-red-100 text-rf-vermelho">
+                    <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-emerald-50 text-rf-green border border-emerald-100">
                       Obrigatório
                     </span>
                   )}
@@ -292,7 +292,7 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
                         required
                         checked={respostasTriagem[p.id] === 'Sim'}
                         onChange={() => handleRespostaChange(p.id, 'Sim')}
-                        className="text-rf-vermelho focus:ring-rf-vermelho"
+                        className="text-rf-green focus:ring-rf-green"
                       />
                       Sim
                     </label>
@@ -304,7 +304,7 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
                         required
                         checked={respostasTriagem[p.id] === 'Não'}
                         onChange={() => handleRespostaChange(p.id, 'Não')}
-                        className="text-rf-vermelho focus:ring-rf-vermelho"
+                        className="text-rf-green focus:ring-rf-green"
                       />
                       Não
                     </label>
@@ -316,7 +316,7 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
                     value={respostasTriagem[p.id] || ''}
                     onChange={(e) => handleRespostaChange(p.id, e.target.value)}
                     placeholder="Sua resposta..."
-                    className="w-full px-3 py-2 text-xs bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho"
+                    className="w-full px-3 py-2 text-xs bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green"
                   />
                 )}
               </div>
@@ -327,8 +327,8 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
 
       {/* 3. Pergunta Aberta */}
       <div>
-        <h3 className="text-base font-bold text-rf-cinza mb-4 flex items-center gap-2 border-b border-gray-100 pb-2">
-          <MessageSquare className="w-4 h-4 text-rf-vermelho" />
+        <h3 className="text-base font-bold text-gray-900 mb-4 flex items-center gap-2 border-b border-gray-100 pb-2">
+          <MessageSquare className="w-4 h-4 text-rf-green" />
           {perguntas && perguntas.length > 0 ? '3.' : '2.'} Apresentação Profissional
         </h3>
 
@@ -342,19 +342,19 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
             value={perguntaAberta}
             onChange={(e) => setPerguntaAberta(e.target.value)}
             placeholder="Conte brevemente sobre sua trajetória recente, experiências práticas e disponibilidade..."
-            className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho leading-relaxed"
+            className="w-full px-4 py-2.5 text-sm bg-gray-50/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green leading-relaxed"
           />
         </div>
       </div>
 
       {/* 4. Upload de Currículo em PDF */}
       <div>
-        <h3 className="text-base font-bold text-rf-cinza mb-4 flex items-center gap-2 border-b border-gray-100 pb-2">
-          <UploadCloud className="w-4 h-4 text-rf-vermelho" />
+        <h3 className="text-base font-bold text-gray-900 mb-4 flex items-center gap-2 border-b border-gray-100 pb-2">
+          <UploadCloud className="w-4 h-4 text-rf-green" />
           {perguntas && perguntas.length > 0 ? '4.' : '3.'} Anexar Currículo (PDF)
         </h3>
 
-        <div className="border-2 border-dashed border-gray-200 hover:border-rf-vermelho/50 rounded-xl p-6 text-center transition-all bg-gray-50/50">
+        <div className="border-2 border-dashed border-gray-200 hover:border-rf-gold/60 rounded-xl p-6 text-center transition-all bg-gray-50/40">
           <input
             type="file"
             id="curriculo-upload"
@@ -365,8 +365,8 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
 
           {curriculo ? (
             <div className="flex flex-col items-center">
-              <FileCheck className="w-10 h-10 text-emerald-600 mb-2" />
-              <span className="text-sm font-semibold text-rf-cinza">
+              <FileCheck className="w-10 h-10 text-rf-green mb-2" />
+              <span className="text-sm font-semibold text-gray-800">
                 {curriculo.name}
               </span>
               <span className="text-xs text-gray-400 mb-3">
@@ -374,7 +374,7 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
               </span>
               <label
                 htmlFor="curriculo-upload"
-                className="text-xs text-rf-vermelho hover:underline font-semibold cursor-pointer"
+                className="text-xs text-rf-gold hover:text-rf-gold-hover hover:underline font-bold cursor-pointer"
               >
                 Trocar arquivo
               </label>
@@ -382,7 +382,7 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
           ) : (
             <label htmlFor="curriculo-upload" className="cursor-pointer block">
               <UploadCloud className="w-10 h-10 text-gray-400 mx-auto mb-2" />
-              <span className="text-sm font-semibold text-rf-cinza block">
+              <span className="text-sm font-semibold text-gray-800 block">
                 Clique para selecionar seu currículo em PDF
               </span>
               <span className="text-xs text-gray-400 mt-1 block">
@@ -408,7 +408,7 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
             required
             checked={aceiteLgpd}
             onChange={(e) => setAceiteLgpd(e.target.checked)}
-            className="w-4 h-4 text-rf-vermelho rounded border-gray-300 focus:ring-rf-vermelho mt-0.5"
+            className="w-4 h-4 text-rf-green rounded border-gray-300 focus:ring-rf-green mt-0.5"
           />
           <span className="text-xs text-gray-600 leading-relaxed">
             Autorizo a <strong>RF Distribuidora de Produtos Alimentícios Ltda</strong> a armazenar e processar meus dados pessoais e currículo estritamente para fins de processos seletivos e recrutamento, em conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018)</strong>.
@@ -424,7 +424,7 @@ export function FormularioCandidatura({ vagaId, perguntas }: FormularioCandidatu
         <button
           type="submit"
           disabled={isPending}
-          className="w-full py-4 bg-rf-vermelho text-white rounded-xl text-sm font-bold hover:bg-rf-vermelho-escuro shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+          className="w-full py-4 bg-rf-green hover:bg-rf-green-light text-white rounded-xl text-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {isPending ? (
             <>

@@ -56,7 +56,7 @@ export default function AdminLoginPage() {
       <div className="pt-4 max-w-sm mx-auto w-full">
         <Link
           href="/vagas"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-500 hover:text-rf-vermelho transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-500 hover:text-rf-green transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           Voltar para o mural público
@@ -64,18 +64,26 @@ export default function AdminLoginPage() {
       </div>
 
       <div className="w-full max-w-md mx-auto my-auto">
-        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 md:p-10">
-          {/* Logo Corporativo */}
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 md:p-10">
+          {/* Logo Corporativo Oficial */}
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-extrabold text-rf-cinza tracking-tight">
-              RF <span className="text-rf-vermelho">DISTRIBUIDORA</span>
+            <img
+              src="/rf-monogram.png"
+              alt="RF Distribuidora"
+              className="h-12 w-auto mx-auto mb-3 object-contain"
+            />
+            <h1 className="text-xl font-bold text-rf-green tracking-tight">
+              RF Distribuidora
             </h1>
-            <div className="inline-flex items-center gap-1.5 mt-2 px-3 py-1 rounded-full bg-red-50 text-rf-vermelho text-xs font-semibold border border-red-100">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              Painel Mini-ATS & Recrutamento
+            <span className="text-[10px] font-bold text-rf-gold tracking-[0.22em] uppercase block mt-0.5">
+              DISTRIBUIÇÃO & REPRESENTAÇÃO
+            </span>
+            <div className="inline-flex items-center gap-1.5 mt-3 px-3 py-1 rounded-full bg-emerald-50 text-rf-green text-xs font-semibold border border-emerald-100">
+              <ShieldCheck className="w-3.5 h-3.5 text-rf-green" />
+              Painel ATS & Gestão de Vagas
             </div>
-            <p className="text-xs text-gray-500 mt-3">
-              Acesso restrito à equipe de RH e Gestão de Pessoas
+            <p className="text-xs text-gray-400 mt-2">
+              Acesso exclusivo à equipe de RH e Recrutamento
             </p>
           </div>
 
@@ -100,8 +108,8 @@ export default function AdminLoginPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="rh@rfdis.com.br"
-                  className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho"
+                  placeholder="comercial05@rfdis.com.br"
+                  className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green"
                 />
               </div>
             </div>
@@ -118,7 +126,7 @@ export default function AdminLoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••••••"
-                  className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho"
+                  className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green"
                 />
               </div>
             </div>
@@ -126,7 +134,7 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={isPending}
-              className="w-full py-3 bg-rf-vermelho text-white font-semibold rounded-lg text-sm hover:bg-rf-vermelho-escuro transition-colors shadow-sm flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full py-3 bg-rf-green text-white font-semibold rounded-xl text-sm hover:bg-rf-green-light transition-all shadow-sm hover:shadow flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {isPending ? (
                 <>

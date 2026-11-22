@@ -135,17 +135,17 @@ export function FormularioDireto() {
 
   if (sucessoEnviado) {
     return (
-      <div className="bg-white border border-gray-200 rounded-2xl p-8 sm:p-12 shadow-sm text-center max-w-xl mx-auto my-8">
-        <div className="w-16 h-16 bg-[#0F382A]/10 text-[#0F382A] rounded-full flex items-center justify-center mx-auto mb-6">
-          <CheckCircle2 className="w-9 h-9" />
+      <div className="bg-white border border-gray-100 rounded-2xl p-8 sm:p-12 shadow-sm text-center max-w-xl mx-auto my-8">
+        <div className="w-16 h-16 bg-rf-green/10 text-rf-green rounded-full flex items-center justify-center mx-auto mb-6">
+          <CheckCircle2 className="w-9 h-9 text-rf-green" />
         </div>
         <h2 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight">
           Currículo Recebido com Sucesso
         </h2>
         <p className="text-sm text-gray-600 leading-relaxed mb-6">
           Seus dados e currículo foram encaminhados diretamente para a equipe de Recursos Humanos da{' '}
-          <strong className="text-gray-900">RF Distribuidora</strong> para a área de{' '}
-          <span className="text-[#0F382A] font-semibold">{areaInteresse}</span>.
+          <strong className="text-gray-900 font-semibold">RF Distribuidora</strong> para a área de{' '}
+          <span className="text-rf-green font-bold">{areaInteresse}</span>.
         </p>
         <p className="text-xs text-gray-500 mb-8">
           Entraremos em contato via WhatsApp caso seu perfil seja selecionado para uma oportunidade.
@@ -153,7 +153,7 @@ export function FormularioDireto() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
             href="https://rfdis.com.br"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#0F382A] hover:bg-[#154d3a] text-white text-xs font-semibold transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-rf-green hover:bg-rf-green-light text-white text-xs font-semibold transition-all shadow-sm hover:shadow"
           >
             Voltar ao site institucional
           </a>
@@ -169,7 +169,7 @@ export function FormularioDireto() {
               setMensagem('');
               setAceiteLgpd(false);
             }}
-            className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-semibold transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gray-50 hover:bg-gray-100 text-gray-700 text-xs font-semibold border border-gray-200 transition-colors"
           >
             Enviar outro currículo
           </button>
@@ -179,16 +179,16 @@ export function FormularioDireto() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
-      {/* Barra de Título do Formulário */}
-      <div className="bg-[#0F382A] px-6 sm:px-8 py-6 text-white border-b-2 border-[#CBA358]">
-        <span className="text-[10px] font-bold tracking-[0.2em] text-[#CBA358] uppercase block mb-1">
+    <form onSubmit={handleSubmit} className="bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden">
+      {/* Barra de Título do Formulário com Gradiente Oficial RF */}
+      <div className="bg-gradient-to-r from-rf-green to-rf-green-dark px-6 sm:px-8 py-7 text-white border-b-2 border-rf-gold">
+        <span className="text-[10px] font-bold tracking-[0.22em] text-rf-gold uppercase block mb-1.5">
           Recursos Humanos &bull; RF Distribuidora
         </span>
         <h1 className="text-xl sm:text-2xl font-bold tracking-tight">
           Trabalhe Conosco
         </h1>
-        <p className="text-xs text-gray-300 mt-1 max-w-xl">
+        <p className="text-xs text-gray-200/90 mt-1.5 max-w-xl leading-relaxed">
           Preencha os campos abaixo e anexe seu currículo para participar dos processos seletivos da empresa.
         </p>
       </div>
@@ -216,7 +216,7 @@ export function FormularioDireto() {
               value={nome}
               onChange={(e) => setNome(e.target.value)}
               placeholder="Digite seu nome completo"
-              className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm text-gray-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F382A] focus:border-[#0F382A] transition-all"
+              className="w-full pl-10 pr-4 py-2.5 bg-gray-50/50 border border-gray-200 rounded-lg text-sm text-gray-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green transition-all"
             />
           </div>
         </div>
@@ -237,7 +237,7 @@ export function FormularioDireto() {
                 value={whatsapp}
                 onChange={handleWhatsappChange}
                 placeholder="(21) 98765-4321"
-                className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm text-gray-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F382A] focus:border-[#0F382A] transition-all"
+                className="w-full pl-10 pr-4 py-2.5 bg-gray-50/50 border border-gray-200 rounded-lg text-sm text-gray-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green transition-all"
               />
             </div>
           </div>
@@ -255,7 +255,7 @@ export function FormularioDireto() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="seu.email@exemplo.com"
-                className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm text-gray-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F382A] focus:border-[#0F382A] transition-all"
+                className="w-full pl-10 pr-4 py-2.5 bg-gray-50/50 border border-gray-200 rounded-lg text-sm text-gray-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green transition-all"
               />
             </div>
           </div>
@@ -277,7 +277,7 @@ export function FormularioDireto() {
                 value={bairro}
                 onChange={(e) => setBairro(e.target.value)}
                 placeholder="Ex: Campo Grande, Barra, Alcântara..."
-                className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm text-gray-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F382A] focus:border-[#0F382A] transition-all"
+                className="w-full pl-10 pr-4 py-2.5 bg-gray-50/50 border border-gray-200 rounded-lg text-sm text-gray-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green transition-all"
               />
             </div>
           </div>
@@ -292,7 +292,7 @@ export function FormularioDireto() {
               value={cidade}
               onChange={(e) => setCidade(e.target.value)}
               placeholder="Ex: Rio de Janeiro, Niterói, Itaboraí..."
-              className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm text-gray-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F382A] focus:border-[#0F382A] transition-all"
+              className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-200 rounded-lg text-sm text-gray-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green transition-all"
             />
           </div>
         </div>
@@ -309,7 +309,7 @@ export function FormularioDireto() {
             <select
               value={areaInteresse}
               onChange={(e) => setAreaInteresse(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm text-gray-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F382A] focus:border-[#0F382A] transition-all"
+              className="w-full pl-10 pr-4 py-2.5 bg-gray-50/50 border border-gray-200 rounded-lg text-sm text-gray-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green transition-all"
             >
               {AREAS_INTERESSE.map((area) => (
                 <option key={area} value={area}>
@@ -328,10 +328,10 @@ export function FormularioDireto() {
 
           <label
             htmlFor="curriculo-upload"
-            className={`border-2 border-dashed rounded-xl p-6 flex flex-col items-center justify-center cursor-pointer transition-colors ${
+            className={`border-2 border-dashed rounded-xl p-6 flex flex-col items-center justify-center cursor-pointer transition-all ${
               curriculo
-                ? 'border-[#0F382A] bg-[#0F382A]/5'
-                : 'border-gray-300 hover:border-[#0F382A] bg-gray-50 hover:bg-white'
+                ? 'border-rf-green bg-rf-green/5'
+                : 'border-gray-200 hover:border-rf-gold bg-gray-50/40 hover:bg-white'
             }`}
           >
             <input
@@ -343,13 +343,13 @@ export function FormularioDireto() {
             />
 
             {curriculo ? (
-              <div className="flex items-center gap-3 text-sm text-[#0F382A] font-semibold">
-                <FileCheck className="w-6 h-6 text-[#0F382A]" />
+              <div className="flex items-center gap-3 text-sm text-rf-green font-semibold">
+                <FileCheck className="w-6 h-6 text-rf-green" />
                 <span className="truncate max-w-xs">{curriculo.name}</span>
                 <span className="text-xs text-gray-500 font-normal">
                   ({(curriculo.size / 1024 / 1024).toFixed(2)} MB)
                 </span>
-                <span className="text-xs text-[#0F382A] underline ml-2">Alterar</span>
+                <span className="text-xs text-rf-gold hover:text-rf-gold-hover underline ml-2 font-bold">Alterar</span>
               </div>
             ) : (
               <div className="text-center space-y-1">
@@ -357,7 +357,7 @@ export function FormularioDireto() {
                 <p className="text-sm font-semibold text-gray-700">
                   Clique para selecionar seu currículo em PDF
                 </p>
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-gray-400">
                   Tamanho máximo permitido: 5 MB
                 </p>
               </div>
@@ -383,7 +383,7 @@ export function FormularioDireto() {
               value={mensagem}
               onChange={(e) => setMensagem(e.target.value)}
               placeholder="Descreva brevemente suas principais experiências profissionais ou disponibilidade de horário..."
-              className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm text-gray-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F382A] focus:border-[#0F382A] transition-all"
+              className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-200 rounded-lg text-sm text-gray-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green transition-all"
             />
           </div>
         </div>
@@ -396,7 +396,7 @@ export function FormularioDireto() {
               required
               checked={aceiteLgpd}
               onChange={(e) => setAceiteLgpd(e.target.checked)}
-              className="mt-1 w-4 h-4 text-[#0F382A] border-gray-300 rounded focus:ring-[#0F382A]"
+              className="mt-1 w-4 h-4 text-rf-green border-gray-300 rounded focus:ring-rf-green"
             />
             <span className="text-xs text-gray-600 leading-relaxed">
               Autorizo o armazenamento dos meus dados e currículo pela <strong>RF Distribuidora</strong> exclusivamente
@@ -411,7 +411,7 @@ export function FormularioDireto() {
           <button
             type="submit"
             disabled={isPending}
-            className="w-full flex items-center justify-center gap-2 bg-[#0F382A] hover:bg-[#154d3a] disabled:bg-gray-400 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-sm hover:shadow"
+            className="w-full flex items-center justify-center gap-2 bg-rf-green hover:bg-rf-green-light disabled:bg-gray-400 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-sm hover:shadow hover:-translate-y-0.5"
           >
             {isPending ? (
               <>

@@ -1,7 +1,7 @@
 // ==============================================================================
 // Page: app/(public)/vagas/page.tsx
 // Projeto: Portal de Vagas & Mini-ATS — RF Distribuidora
-// Descrição: Página principal simplificada — Formulário direto Trabalhe Conosco
+// Descrição: Página principal com identidade visual oficial da RF Distribuidora
 // ==============================================================================
 
 import React from 'react';
@@ -28,42 +28,44 @@ export const metadata: Metadata = {
 
 export default function VagasPage() {
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col justify-between selection:bg-[#CBA358] selection:text-[#0A261C]">
+    <main className="min-h-screen bg-[#FBFBFA] flex flex-col justify-between selection:bg-rf-gold selection:text-rf-green-dark">
       <div>
         {/* Header Oficial da RF Distribuidora */}
-        <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-xs">
+        <header className="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 shadow-xs">
           <div className="max-w-5xl mx-auto px-4 h-20 flex items-center justify-between">
-            {/* Logo e Identificação */}
+            {/* Logo e Identificação Oficial */}
             <a
               href="https://rfdis.com.br"
               className="flex items-center gap-3 group"
               title="Voltar ao site institucional rfdis.com.br"
             >
-              <div className="w-10 h-10 rounded bg-[#0F382A] text-[#CBA358] flex items-center justify-center font-extrabold text-sm tracking-tighter shadow-sm group-hover:scale-105 transition-transform">
-                RF
-              </div>
+              <img
+                src="/rf-monogram.png"
+                alt="RF Distribuidora"
+                className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+              />
               <div className="flex flex-col">
-                <span className="text-[19px] font-bold text-[#0F382A] tracking-tight leading-none">
+                <span className="text-[20px] font-bold text-rf-green tracking-tight leading-none group-hover:text-rf-green-light transition-colors">
                   RF Distribuidora
                 </span>
-                <span className="text-[10px] font-bold text-[#CBA358] tracking-[0.22em] uppercase mt-1">
+                <span className="text-[10px] font-bold text-rf-gold tracking-[0.22em] uppercase mt-1">
                   DISTRIBUIÇÃO & REPRESENTAÇÃO
                 </span>
               </div>
             </a>
 
             {/* Links Auxiliares */}
-            <div className="flex items-center gap-4 text-xs font-semibold">
+            <div className="flex items-center gap-3 sm:gap-4 text-xs font-semibold">
               <a
                 href="https://rfdis.com.br"
-                className="hidden sm:inline-flex items-center gap-1.5 text-gray-600 hover:text-[#0F382A] transition-colors"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-rf-green hover:text-rf-gold hover:bg-gray-50 border border-gray-200 transition-all shadow-2xs"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
-                <span>rfdis.com.br</span>
+                <span>Voltar ao site</span>
               </a>
               <Link
                 href="/admin/login"
-                className="inline-flex items-center gap-1 text-gray-400 hover:text-gray-600 transition-colors py-1.5 px-2.5 rounded-lg border border-transparent hover:border-gray-200"
+                className="inline-flex items-center gap-1.5 text-gray-400 hover:text-rf-green transition-colors py-1.5 px-2.5 rounded-lg border border-transparent hover:border-gray-200"
                 title="Acesso restrito para recrutadores do RH"
               >
                 <Lock className="w-3 h-3" />
@@ -80,19 +82,43 @@ export default function VagasPage() {
       </div>
 
       {/* Rodapé Oficial da RF Distribuidora */}
-      <footer className="border-t border-gray-200 bg-white py-6 px-4 text-xs text-gray-500">
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-          <p>
+      <footer className="bg-[#0A261C] text-gray-300 py-10 px-4 mt-12 border-t border-[#CBA358]/40">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+          <div className="flex items-center gap-3">
+            <img
+              src="/rf-monogram-white.png"
+              alt="RF Distribuidora"
+              className="h-9 w-auto object-contain opacity-90"
+            />
+            <div className="flex flex-col text-left">
+              <span className="text-sm font-bold text-white tracking-tight leading-none">
+                RF Distribuidora
+              </span>
+              <span className="text-[9px] font-bold text-rf-gold tracking-[0.2em] uppercase mt-1">
+                DISTRIBUIÇÃO & REPRESENTAÇÃO
+              </span>
+            </div>
+          </div>
+
+          <p className="text-xs text-gray-400">
             &copy; {new Date().getFullYear()} RF Comércio de Produtos Alimentícios Ltda. Todos os direitos reservados.
           </p>
-          <div className="flex items-center gap-4">
+
+          <div className="flex items-center gap-5 text-xs">
+            <a
+              href="https://rfdis.com.br"
+              className="text-gray-300 hover:text-rf-gold transition-colors inline-flex items-center gap-1"
+            >
+              <span>Site Principal</span>
+            </a>
+            <span className="text-gray-600">|</span>
             <a
               href="https://www.daatel.com.br"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[11px] text-gray-400 hover:text-[#0F382A] transition-colors"
+              className="text-[11px] text-gray-400/80 hover:text-rf-gold transition-colors tracking-wide"
             >
-              Powered by <span className="font-semibold text-gray-600">www.daatel.com.br</span>
+              Powered by <span className="font-medium text-gray-300 hover:text-rf-gold">www.daatel.com.br</span>
             </a>
           </div>
         </div>
@@ -100,3 +126,4 @@ export default function VagasPage() {
     </main>
   );
 }
+

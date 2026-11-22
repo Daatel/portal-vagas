@@ -2,6 +2,18 @@
 
 ---
 
+## v1.2 — 2026-11-22 (Sessão: Alinhamento Fiel da Identidade Visual Oficial da RF Distribuidora)
+
+### 🎨 Padronização de Marca e Identidade Visual (`public/`, `app/`, `components/`)
+- **Ativos Oficiais:** Criação da pasta `public/` e importação dos arquivos oficiais do monograma em alta definição (`rf-monogram.png` e `rf-monogram-white.png`) e favicon oficial da empresa.
+- **Header Oficial:** Substituição do bloco improvisado de texto em CSS pelo logotipo/monograma real com enquadramento proporcional, subtítulo institucional dourado `DISTRIBUIÇÃO & REPRESENTAÇÃO` e botão com link direto para o site oficial `https://rfdis.com.br`.
+- **Rodapé Corporativo:** Implementação do rodapé em Verde Floresta Escuro (`#0A261C`) com linha divisória dourada (`#CBA358`/40), monograma branco/dourado e crédito institucional discreto `Powered by www.daatel.com.br`.
+- **Eliminação de Cores Divergentes:** Substituição integral do padrão anterior com botões vermelhos (`#C0392B`) e blocos em azul escuro pela paleta corporativa oficial: Verde Floresta (`#0F382A`), Verde Médio (`#17523C`) e Dourado Corporativo (`#CBA358`).
+- **Correção de Glitch no Dark Mode:** Removido o bloco de `@media (prefers-color-scheme: dark)` no `globals.css` que invertia o fundo para preto `#0a0a0a`; fixado no fundo clássico corporativo `#FBFBFA` (`rf-cream`).
+- **Tipografia & Metadados:** Integração da fonte corporativa oficial **Inter** (Google Fonts via `next/font/google`), configuração de idioma `pt-BR` e título oficial da aba no navegador no `app/layout.tsx`.
+
+---
+
 ## v1.1 — 2026-11-21 (Sessão: Simplificação Direta do Trabalhe Conosco — Formulário Ágil de Candidatura)
 
 ### 🚀 Interface Pública (`app/(public)/vagas/page.tsx` & `components/vagas/FormularioDireto.tsx`)
