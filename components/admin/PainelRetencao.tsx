@@ -66,7 +66,7 @@ export function PainelRetencao({ estatisticasIniciais }: PainelRetencaoProps) {
             <span className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider block">
               Total de Candidatos
             </span>
-            <span className="text-2xl font-extrabold text-rf-cinza">
+            <span className="text-2xl font-extrabold text-gray-900">
               {stats.totalCandidatos}
             </span>
             <span className="text-[10px] text-gray-400 block mt-0.5">
@@ -111,8 +111,8 @@ export function PainelRetencao({ estatisticasIniciais }: PainelRetencaoProps) {
       <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 shadow-sm">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <h3 className="text-base font-bold text-rf-cinza flex items-center gap-2">
-              <ShieldAlert className="w-5 h-5 text-rf-vermelho" />
+            <h3 className="text-base font-bold text-gray-900 flex items-center gap-2">
+              <ShieldAlert className="w-5 h-5 text-rf-green" />
               Executar Expurgo de Currículos Antigos
             </h3>
             <p className="text-xs text-gray-500 mt-1 max-w-xl leading-relaxed">
@@ -150,7 +150,7 @@ export function PainelRetencao({ estatisticasIniciais }: PainelRetencaoProps) {
             </div>
 
             <div className="text-center">
-              <h4 className="text-base font-bold text-rf-cinza">
+              <h4 className="text-base font-bold text-gray-900">
                 Confirmar Expurgo Definitivo?
               </h4>
               <p className="text-xs text-gray-500 mt-2 leading-relaxed">

@@ -140,16 +140,26 @@ export default async function VagaDetailPage({ params }: VagaDetailPageProps) {
       />
 
       {/* Header com Navegação */}
-      <header className="bg-white border-b border-gray-200">
+      <header className="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          <Link href="/vagas" className="flex items-center gap-2">
-            <span className="font-extrabold text-xl tracking-tight text-rf-cinza">
-              RF <span className="text-rf-vermelho">DISTRIBUIDORA</span>
-            </span>
+          <Link href="/vagas" className="flex items-center gap-2.5 group">
+            <img
+              src="/rf-monogram.png"
+              alt="RF Distribuidora"
+              className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
+            />
+            <div className="flex flex-col">
+              <span className="font-bold text-base tracking-tight text-rf-green">
+                RF Distribuidora
+              </span>
+              <span className="text-[9px] font-bold text-rf-gold tracking-[0.2em] uppercase">
+                DISTRIBUIÇÃO & REPRESENTAÇÃO
+              </span>
+            </div>
           </Link>
           <Link
             href="/vagas"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-600 hover:text-rf-vermelho transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-600 hover:text-rf-green transition-colors px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             Voltar para o mural de vagas
@@ -160,13 +170,13 @@ export default async function VagaDetailPage({ params }: VagaDetailPageProps) {
       {/* Breadcrumbs */}
       <div className="max-w-6xl mx-auto px-4 py-4">
         <nav className="flex items-center gap-2 text-xs text-gray-400">
-          <Link href="/vagas" className="hover:text-rf-cinza transition-colors">
+          <Link href="/vagas" className="hover:text-rf-green transition-colors">
             Início
           </Link>
           <span>/</span>
           <Link
             href={`/vagas?departamento=${vaga.departamento}`}
-            className="hover:text-rf-cinza transition-colors"
+            className="hover:text-rf-green transition-colors"
           >
             {vaga.departamento}
           </Link>
@@ -182,7 +192,7 @@ export default async function VagaDetailPage({ params }: VagaDetailPageProps) {
             {/* Header da Vaga */}
             <div className="bg-white rounded-xl border border-gray-200 p-6 md:p-8 shadow-sm">
               <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-red-50 text-rf-vermelho border border-red-100">
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-rf-green border border-emerald-100">
                   {vaga.departamento}
                 </span>
                 <span className="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
@@ -190,13 +200,13 @@ export default async function VagaDetailPage({ params }: VagaDetailPageProps) {
                 </span>
               </div>
 
-              <h1 className="text-2xl md:text-3xl font-extrabold text-rf-cinza mb-4 tracking-tight">
+              <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-4 tracking-tight">
                 {vaga.titulo}
               </h1>
 
               <div className="flex flex-wrap gap-4 text-xs text-gray-500 pt-4 border-t border-gray-100">
                 <div className="flex items-center gap-1.5">
-                  <MapPin className="w-4 h-4 text-rf-vermelho" />
+                  <MapPin className="w-4 h-4 text-rf-green" />
                   <span>{vaga.unidade}</span>
                 </div>
                 <div className="flex items-center gap-1.5">
@@ -212,8 +222,8 @@ export default async function VagaDetailPage({ params }: VagaDetailPageProps) {
 
             {/* Descrição das Atividades */}
             <div className="bg-white rounded-xl border border-gray-200 p-6 md:p-8 shadow-sm">
-              <h2 className="text-lg font-bold text-rf-cinza mb-4 flex items-center gap-2">
-                <Briefcase className="w-5 h-5 text-rf-vermelho" />
+              <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <Briefcase className="w-5 h-5 text-rf-green" />
                 Descrição das Atividades
               </h2>
               <div className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">
@@ -223,14 +233,14 @@ export default async function VagaDetailPage({ params }: VagaDetailPageProps) {
 
             {/* Requisitos e Qualificações */}
             <div className="bg-white rounded-xl border border-gray-200 p-6 md:p-8 shadow-sm">
-              <h2 className="text-lg font-bold text-rf-cinza mb-4 flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-rf-vermelho" />
+              <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-rf-green" />
                 Requisitos e Qualificações
               </h2>
               <ul className="space-y-2.5">
                 {requisitosLista.map((req, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-rf-vermelho mt-2 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-rf-gold mt-2 shrink-0" />
                     <span>{req.replace(/^[•\-\*]\s*/, '')}</span>
                   </li>
                 ))}
@@ -240,8 +250,8 @@ export default async function VagaDetailPage({ params }: VagaDetailPageProps) {
             {/* Benefícios */}
             {beneficiosLista.length > 0 && (
               <div className="bg-white rounded-xl border border-gray-200 p-6 md:p-8 shadow-sm">
-                <h2 className="text-lg font-bold text-rf-cinza mb-4 flex items-center gap-2">
-                  <Gift className="w-5 h-5 text-rf-vermelho" />
+                <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <Gift className="w-5 h-5 text-rf-green" />
                   Benefícios e Vantagens
                 </h2>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -262,7 +272,7 @@ export default async function VagaDetailPage({ params }: VagaDetailPageProps) {
           {/* Coluna Lateral: CTA Card de Candidatura */}
           <div className="space-y-6">
             <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm sticky top-24">
-              <h3 className="text-lg font-bold text-rf-cinza mb-2">
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
                 Pronto para dar o próximo passo?
               </h3>
               <p className="text-xs text-gray-500 mb-6 leading-relaxed">
@@ -271,7 +281,7 @@ export default async function VagaDetailPage({ params }: VagaDetailPageProps) {
 
               <Link
                 href={`/vagas/${vaga.slug}/candidatura`}
-                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-rf-vermelho text-white font-semibold rounded-lg hover:bg-rf-vermelho-escuro shadow-md hover:shadow-lg transition-all text-sm mb-4"
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-rf-green text-white font-semibold rounded-lg hover:bg-rf-green-light shadow-md hover:shadow-lg transition-all text-sm mb-4"
               >
                 Candidatar-se para esta vaga
                 <ArrowRight className="w-4 h-4" />

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 // ==============================================================================
 // Component: components/admin/FormularioVaga.tsx
@@ -151,7 +151,7 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
       <div>
         <Link
           href="/admin/vagas"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-500 hover:text-rf-vermelho transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-500 hover:text-rf-green transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           Voltar para listagem de vagas
@@ -178,8 +178,8 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
 
       {/* 1. Informações Básicas da Vaga */}
       <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 shadow-sm space-y-6">
-        <h2 className="text-base font-bold text-rf-cinza flex items-center gap-2 border-b border-gray-100 pb-3">
-          <Briefcase className="w-4 h-4 text-rf-vermelho" />
+        <h2 className="text-base font-bold text-gray-900 flex items-center gap-2 border-b border-gray-100 pb-3">
+          <Briefcase className="w-4 h-4 text-rf-green" />
           1. Informações Básicas
         </h2>
 
@@ -194,7 +194,7 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
               value={titulo}
               onChange={(e) => handleTituloChange(e.target.value)}
               placeholder="Ex: Vendedor Externo - Varejo Alimentar"
-              className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho"
+              className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green"
             />
           </div>
 
@@ -212,7 +212,7 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
                 value={slug}
                 onChange={(e) => setSlug(slugify(e.target.value))}
                 placeholder="vendedor-externo-varejo"
-                className="w-full px-3 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho font-mono text-xs"
+                className="w-full px-3 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green font-mono text-xs"
               />
             </div>
           </div>
@@ -224,7 +224,7 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
             <select
               value={status}
               onChange={(e) => setStatus(e.target.value as StatusVaga)}
-              className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho font-medium"
+              className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green font-medium"
             >
               <option value="Ativa">Ativa (Visível no site)</option>
               <option value="Rascunho">Rascunho (Não visível)</option>
@@ -240,7 +240,7 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
             <select
               value={departamento}
               onChange={(e) => setDepartamento(e.target.value as DepartamentoVaga)}
-              className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho"
+              className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green"
             >
               <option value="Comercial">Comercial / Vendas</option>
               <option value="Logistica">Logística / Armazenagem</option>
@@ -256,7 +256,7 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
             <select
               value={unidade}
               onChange={(e) => setUnidade(e.target.value as UnidadeVaga)}
-              className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho"
+              className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green"
             >
               <option value="Centro Logistico BR-101">Centro Logístico BR-101 (Itaboraí)</option>
               <option value="Escritorio Barra da Tijuca">Escritório Barra da Tijuca</option>
@@ -271,7 +271,7 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
             <select
               value={tipoContrato}
               onChange={(e) => setTipoContrato(e.target.value as TipoContratoVaga)}
-              className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho"
+              className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green"
             >
               <option value="CLT">CLT (Efetivo)</option>
               <option value="PJ">Prestador PJ / Autônomo</option>
@@ -283,8 +283,8 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
 
       {/* 2. Descrição, Requisitos e Benefícios */}
       <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 shadow-sm space-y-6">
-        <h2 className="text-base font-bold text-rf-cinza flex items-center gap-2 border-b border-gray-100 pb-3">
-          <FileText className="w-4 h-4 text-rf-vermelho" />
+        <h2 className="text-base font-bold text-gray-900 flex items-center gap-2 border-b border-gray-100 pb-3">
+          <FileText className="w-4 h-4 text-rf-green" />
           2. Detalhamento da Oportunidade
         </h2>
 
@@ -298,7 +298,7 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
             value={descricao}
             onChange={(e) => setDescricao(e.target.value)}
             placeholder="Descreva as responsabilidades da função no dia a dia da distribuidora..."
-            className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho leading-relaxed"
+            className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green leading-relaxed"
           />
         </div>
 
@@ -312,7 +312,7 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
             value={requisitos}
             onChange={(e) => setRequisitos(e.target.value)}
             placeholder="• Ensino Médio Completo&#10;• Experiência no segmento de distribuição alimentar&#10;• Residir com fácil acesso à BR-101"
-            className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho leading-relaxed"
+            className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green leading-relaxed"
           />
         </div>
 
@@ -325,7 +325,7 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
             value={beneficios}
             onChange={(e) => setBeneficios(e.target.value)}
             placeholder="• Vale Transporte&#10;• Vale Refeição&#10;• Seguro de Vida&#10;• Desconto em Produtos"
-            className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho leading-relaxed"
+            className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green leading-relaxed"
           />
         </div>
       </div>
@@ -334,8 +334,8 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
       <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 shadow-sm space-y-6">
         <div className="flex items-center justify-between border-b border-gray-100 pb-3">
           <div>
-            <h2 className="text-base font-bold text-rf-cinza flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-rf-vermelho" />
+            <h2 className="text-base font-bold text-gray-900 flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-rf-green" />
               3. Perguntas de Triagem Automatizada
             </h2>
             <p className="text-xs text-gray-500 mt-0.5">
@@ -386,7 +386,7 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
                     value={pergunta.texto}
                     onChange={(e) => handleUpdatePergunta(idx, 'texto', e.target.value)}
                     placeholder="Ex: Possui CNH categoria D válida?"
-                    className="w-full px-3 py-2 text-xs bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho"
+                    className="w-full px-3 py-2 text-xs bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green"
                   />
                 </div>
 
@@ -399,7 +399,7 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
                         value="sim_nao"
                         checked={pergunta.tipo === 'sim_nao'}
                         onChange={() => handleUpdatePergunta(idx, 'tipo', 'sim_nao')}
-                        className="text-rf-vermelho"
+                        className="text-rf-green"
                       />
                       Opção Sim / Não
                     </label>
@@ -410,7 +410,7 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
                         value="texto"
                         checked={pergunta.tipo === 'texto'}
                         onChange={() => handleUpdatePergunta(idx, 'tipo', 'texto')}
-                        className="text-rf-vermelho"
+                        className="text-rf-green"
                       />
                       Texto Livre
                     </label>
@@ -423,7 +423,7 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
                       onChange={(e) =>
                         handleUpdatePergunta(idx, 'eliminatoria', e.target.checked)
                       }
-                      className="w-3.5 h-3.5 text-rf-vermelho rounded border-gray-300"
+                      className="w-3.5 h-3.5 text-rf-green rounded border-gray-300"
                     />
                     <span className="text-xs font-semibold text-gray-700">
                       Critério Eliminatório
@@ -447,7 +447,7 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
         <button
           type="submit"
           disabled={isPending}
-          className="px-6 py-2.5 bg-rf-vermelho text-white rounded-lg text-xs font-bold hover:bg-rf-vermelho-escuro transition-colors shadow-sm flex items-center gap-2 disabled:opacity-60"
+          className="px-6 py-2.5 bg-rf-green text-white rounded-lg text-xs font-bold hover:bg-rf-green-light transition-colors shadow-sm flex items-center gap-2 disabled:opacity-60"
         >
           {isPending ? (
             <>
@@ -462,3 +462,4 @@ export function FormularioVaga({ vagaExistente }: FormularioVagaProps) {
     </form>
   );
 }
+

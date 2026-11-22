@@ -59,8 +59,8 @@ ${linkVaga}
   return (
     <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 shadow-sm space-y-6">
       <div className="border-b border-gray-100 pb-4">
-        <h3 className="text-base font-bold text-rf-cinza flex items-center gap-2">
-          <Share2 className="w-5 h-5 text-rf-vermelho" />
+        <h3 className="text-base font-bold text-gray-900 flex items-center gap-2">
+          <Share2 className="w-5 h-5 text-rf-green" />
           Gerador de Anúncios Externos
         </h3>
         <p className="text-xs text-gray-500 mt-1">
@@ -73,8 +73,8 @@ ${linkVaga}
         <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-3">
-              <span className="text-xs font-bold text-rf-cinza flex items-center gap-1.5">
-                <FileText className="w-4 h-4 text-blue-600" />
+              <span className="text-xs font-bold text-gray-900 flex items-center gap-1.5">
+                <FileText className="w-4 h-4 text-rf-green" />
                 RioVagas / Catho / Classificados
               </span>
               <span className="text-[10px] uppercase font-bold text-gray-400 bg-white px-2 py-0.5 rounded border border-gray-200">
@@ -94,7 +94,7 @@ ${linkVaga}
               className={`w-full py-2.5 px-4 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                 copiadoTipo === 'riovagas'
                   ? 'bg-emerald-600 text-white'
-                  : 'bg-rf-cinza text-white hover:bg-gray-800'
+                  : 'bg-rf-green text-white hover:bg-rf-green-light shadow-sm'
               }`}
             >
               {copiadoTipo === 'riovagas' ? (
@@ -116,7 +116,7 @@ ${linkVaga}
         <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-3">
-              <span className="text-xs font-bold text-rf-cinza flex items-center gap-1.5">
+              <span className="text-xs font-bold text-gray-900 flex items-center gap-1.5">
                 <MessageSquare className="w-4 h-4 text-emerald-600" />
                 WhatsApp / Redes Sociais
               </span>
@@ -137,7 +137,7 @@ ${linkVaga}
               className={`w-full py-2.5 px-4 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                 copiadoTipo === 'whatsapp'
                   ? 'bg-emerald-600 text-white'
-                  : 'bg-emerald-600 text-white hover:bg-emerald-700'
+                  : 'bg-rf-green text-white hover:bg-rf-green-light shadow-sm'
               }`}
             >
               {copiadoTipo === 'whatsapp' ? (

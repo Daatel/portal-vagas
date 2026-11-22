@@ -68,16 +68,26 @@ export default async function CandidaturaPage({ params }: CandidaturaPageProps) 
   return (
     <main className="min-h-screen bg-gray-50 pb-16">
       {/* Header com Navegação */}
-      <header className="bg-white border-b border-gray-200">
+      <header className="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
-          <Link href="/vagas" className="flex items-center gap-2">
-            <span className="font-extrabold text-xl tracking-tight text-rf-cinza">
-              RF <span className="text-rf-vermelho">DISTRIBUIDORA</span>
-            </span>
+          <Link href="/vagas" className="flex items-center gap-2.5 group">
+            <img
+              src="/rf-monogram.png"
+              alt="RF Distribuidora"
+              className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
+            />
+            <div className="flex flex-col">
+              <span className="font-bold text-base tracking-tight text-rf-green">
+                RF Distribuidora
+              </span>
+              <span className="text-[9px] font-bold text-rf-gold tracking-[0.2em] uppercase">
+                DISTRIBUIÇÃO & REPRESENTAÇÃO
+              </span>
+            </div>
           </Link>
           <Link
             href={`/vagas/${vaga.slug}`}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-600 hover:text-rf-vermelho transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-600 hover:text-rf-green transition-colors px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             Voltar para detalhes da vaga
@@ -88,15 +98,15 @@ export default async function CandidaturaPage({ params }: CandidaturaPageProps) 
       <div className="max-w-3xl mx-auto px-4 pt-8">
         {/* Card do Resumo da Vaga Aplicada */}
         <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8 shadow-sm">
-          <span className="text-xs font-semibold uppercase tracking-wider text-rf-vermelho">
+          <span className="text-xs font-semibold uppercase tracking-wider text-rf-gold">
             Formulário de Inscrição
           </span>
-          <h1 className="text-2xl font-bold text-rf-cinza mt-1 mb-2">
+          <h1 className="text-2xl font-bold text-gray-900 mt-1 mb-2">
             {vaga.titulo}
           </h1>
           <div className="flex flex-wrap gap-4 text-xs text-gray-500">
             <div className="flex items-center gap-1">
-              <MapPin className="w-3.5 h-3.5 text-rf-vermelho" />
+              <MapPin className="w-3.5 h-3.5 text-rf-green" />
               <span>{vaga.unidade}</span>
             </div>
             <span>•</span>

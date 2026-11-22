@@ -2,6 +2,31 @@
 
 ---
 
+## v1.3 — 2026-11-22 (Sessão: Purificação Total de Cores — Erradicação de Vermelho e Azul)
+
+### 🎨 Padronização Visual Integral (100% Verde Floresta e Dourado)
+- **Eliminação Definitiva de Vermelho e Azul:** Varredura em 100% dos arquivos do projeto, substituindo todas as ocorrências de botões, tags, links, bordas e ícones vermelhos e azuis pelas cores corporativas oficiais da RF Distribuidora:
+  - **Verde Floresta Oficial (`#0F382A` / `#17523C`):** Aplicado a todos os botões de ação principal, ícones de cabeçalho, abas ativas, links e badges de status.
+  - **Dourado Corporativo (`#CBA358` / `#B88F44`):** Aplicado a destaques, anéis de foco, subtítulos institucionais, frisos decorativos e marcadores.
+- **Telas e Componentes Tratados:**
+  - `app/(public)/banco-de-talentos/page.tsx`
+  - `app/(public)/vagas/[slug]/page.tsx`
+  - `app/(public)/vagas/[slug]/candidatura/page.tsx`
+  - `app/admin/page.tsx`
+  - `app/admin/vagas/page.tsx`
+  - `app/admin/candidatos/page.tsx`
+  - `app/admin/candidatos/[id]/page.tsx`
+  - `app/admin/configuracoes/page.tsx`
+  - `components/admin/AdminNavbar.tsx`
+  - `components/admin/KanbanFunil.tsx`
+  - `components/admin/FormularioVaga.tsx`
+  - `components/admin/ScorecardEditor.tsx`
+  - `components/admin/GeradorAnuncios.tsx`
+  - `components/admin/TabelaVagas.tsx`
+  - `components/admin/PainelRetencao.tsx`
+
+---
+
 ## v1.2 — 2026-11-22 (Sessão: Alinhamento Fiel da Identidade Visual Oficial da RF Distribuidora)
 
 ### 🎨 Padronização de Marca e Identidade Visual (`public/`, `app/`, `components/`)

@@ -76,7 +76,7 @@ export function TabelaVagas({ vagasIniciais }: TabelaVagasProps) {
     return (
       <div className="bg-white rounded-2xl border border-gray-200 p-12 text-center">
         <Briefcase className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-        <h3 className="text-base font-bold text-rf-cinza mb-1">
+        <h3 className="text-base font-bold text-gray-900 mb-1">
           Nenhuma vaga cadastrada ainda
         </h3>
         <p className="text-xs text-gray-500 max-w-sm mx-auto mb-6">
@@ -84,7 +84,7 @@ export function TabelaVagas({ vagasIniciais }: TabelaVagasProps) {
         </p>
         <Link
           href="/admin/vagas/nova"
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-rf-vermelho text-white rounded-lg text-xs font-bold hover:bg-rf-vermelho-escuro transition-colors shadow-sm"
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-rf-green text-white rounded-lg text-xs font-bold hover:bg-rf-green-light transition-all shadow-sm"
         >
           Cadastrar Primeira Vaga
         </Link>
@@ -110,7 +110,7 @@ export function TabelaVagas({ vagasIniciais }: TabelaVagasProps) {
             {vagas.map((vaga) => (
               <tr key={vaga.id} className="hover:bg-gray-50/60 transition-colors">
                 <td className="px-6 py-4">
-                  <div className="font-bold text-sm text-rf-cinza">
+                  <div className="font-bold text-sm text-gray-900">
                     {vaga.titulo}
                   </div>
                   <div className="text-[11px] text-gray-400 font-mono mt-0.5">
@@ -151,7 +151,7 @@ export function TabelaVagas({ vagasIniciais }: TabelaVagasProps) {
                       href={`/vagas/${vaga.slug}`}
                       target="_blank"
                       title="Visualizar no Portal Público"
-                      className="p-1.5 text-gray-400 hover:text-rf-cinza hover:bg-gray-100 rounded-lg transition-colors"
+                      className="p-1.5 text-gray-400 hover:text-rf-green hover:bg-gray-100 rounded-lg transition-colors"
                     >
                       <ExternalLink className="w-4 h-4" />
                     </Link>
@@ -160,7 +160,7 @@ export function TabelaVagas({ vagasIniciais }: TabelaVagasProps) {
                     <Link
                       href={`/admin/vagas/${vaga.id}`}
                       title="Editar Vaga"
-                      className="p-1.5 text-gray-600 hover:text-rf-vermelho hover:bg-red-50 rounded-lg transition-colors"
+                      className="p-1.5 text-gray-600 hover:text-rf-green hover:bg-emerald-50 rounded-lg transition-colors"
                     >
                       <Edit className="w-4 h-4" />
                     </Link>

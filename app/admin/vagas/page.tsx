@@ -49,7 +49,7 @@ export default async function AdminVagasPage() {
       {/* Topo da Página */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-2xl font-extrabold text-rf-cinza tracking-tight">
+          <h1 className="text-2xl font-extrabold text-gray-900 tracking-tight">
             Gestão de Vagas
           </h1>
           <p className="text-xs text-gray-500 mt-1">
@@ -59,7 +59,7 @@ export default async function AdminVagasPage() {
 
         <Link
           href="/admin/vagas/nova"
-          className="inline-flex items-center gap-2 px-4 py-2.5 bg-rf-vermelho text-white rounded-lg text-xs font-bold hover:bg-rf-vermelho-escuro transition-colors shadow-sm"
+          className="inline-flex items-center gap-2 px-4 py-2.5 bg-rf-green text-white rounded-lg text-xs font-bold hover:bg-rf-green-light transition-all shadow-sm hover:shadow"
         >
           <Plus className="w-4 h-4" />
           Publicar Nova Vaga
@@ -73,7 +73,7 @@ export default async function AdminVagasPage() {
             <span className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider block">
               Total de Vagas
             </span>
-            <span className="text-2xl font-bold text-rf-cinza">{vagas.length}</span>
+            <span className="text-2xl font-bold text-gray-900">{vagas.length}</span>
           </div>
           <Briefcase className="w-8 h-8 text-gray-200" />
         </div>

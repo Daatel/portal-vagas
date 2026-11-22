@@ -88,7 +88,7 @@ export function AdminNavbar() {
           <Link
             href="/vagas"
             target="_blank"
-            className="hidden sm:inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-rf-cinza px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
+            className="hidden sm:inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-rf-green px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
           >
             <span>Ver Portal Público</span>
             <ExternalLink className="w-3.5 h-3.5" />

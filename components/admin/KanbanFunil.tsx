@@ -28,12 +28,12 @@ interface KanbanFunilProps {
 }
 
 const ETAPAS: { key: EtapaFunil; label: string; corBadge: string; corBorda: string }[] = [
-  { key: 'Novo', label: 'Novos', corBadge: 'bg-blue-50 text-blue-700', corBorda: 'border-blue-400' },
-  { key: 'Triado', label: 'Triados', corBadge: 'bg-indigo-50 text-indigo-700', corBorda: 'border-indigo-400' },
-  { key: 'Entrevista', label: 'Entrevista', corBadge: 'bg-amber-50 text-amber-700', corBorda: 'border-amber-400' },
-  { key: 'Teste Pratico', label: 'Teste Prático', corBadge: 'bg-purple-50 text-purple-700', corBorda: 'border-purple-400' },
-  { key: 'Aprovado', label: 'Aprovados', corBadge: 'bg-emerald-50 text-emerald-700', corBorda: 'border-emerald-400' },
-  { key: 'Banco', label: 'Banco Geral', corBadge: 'bg-slate-100 text-slate-700', corBorda: 'border-slate-400' },
+  { key: 'Novo', label: 'Novos', corBadge: 'bg-emerald-50 text-emerald-800', corBorda: 'border-emerald-600' },
+  { key: 'Triado', label: 'Triados', corBadge: 'bg-amber-50 text-amber-800', corBorda: 'border-amber-500' },
+  { key: 'Entrevista', label: 'Entrevista', corBadge: 'bg-yellow-50 text-yellow-800', corBorda: 'border-rf-gold' },
+  { key: 'Teste Pratico', label: 'Teste Prático', corBadge: 'bg-teal-50 text-teal-800', corBorda: 'border-teal-500' },
+  { key: 'Aprovado', label: 'Aprovados', corBadge: 'bg-emerald-100 text-emerald-900', corBorda: 'border-rf-green' },
+  { key: 'Banco', label: 'Banco Geral', corBadge: 'bg-gray-100 text-gray-700', corBorda: 'border-gray-400' },
   { key: 'Descartado', label: 'Descartados', corBadge: 'bg-red-50 text-red-700', corBorda: 'border-red-400' },
 ];
 
@@ -116,7 +116,7 @@ export function KanbanFunil({ candidatosIniciais, vagasDisponiveis }: KanbanFuni
             <select
               value={vagaFiltro}
               onChange={(e) => setVagaFiltro(e.target.value)}
-              className="w-full px-3 py-2 text-xs bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho font-medium"
+              className="w-full px-3 py-2 text-xs bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green font-medium"
             >
               <option value="">Todas as Vagas & Talentos</option>
               <option value="banco">Apenas Banco de Talentos Geral</option>
@@ -135,7 +135,7 @@ export function KanbanFunil({ candidatosIniciais, vagasDisponiveis }: KanbanFuni
               placeholder="Filtrar por bairro..."
               value={bairroFiltro}
               onChange={(e) => setBairroFiltro(e.target.value)}
-              className="w-full px-3 py-2 text-xs bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho"
+              className="w-full px-3 py-2 text-xs bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green"
             />
           </div>
         </div>
@@ -148,7 +148,7 @@ export function KanbanFunil({ candidatosIniciais, vagasDisponiveis }: KanbanFuni
             placeholder="Buscar por nome ou WhatsApp..."
             value={termoBusca}
             onChange={(e) => setTermoBusca(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 text-xs bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-vermelho/20 focus:border-rf-vermelho"
+            className="w-full pl-9 pr-4 py-2 text-xs bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rf-gold/40 focus:border-rf-green"
           />
         </div>
       </div>
@@ -172,7 +172,7 @@ export function KanbanFunil({ candidatosIniciais, vagasDisponiveis }: KanbanFuni
                 className={`p-3.5 bg-white rounded-t-2xl border-b border-gray-200 border-t-4 ${etapa.corBorda} flex items-center justify-between shadow-xs`}
               >
                 <div className="flex items-center gap-2">
-                  <span className="font-bold text-xs text-rf-cinza">
+                  <span className="font-bold text-xs text-gray-900">
                     {etapa.label}
                   </span>
                   <span
@@ -206,28 +206,28 @@ export function KanbanFunil({ candidatosIniciais, vagasDisponiveis }: KanbanFuni
                             {candidato.vagas.titulo}
                           </span>
                         ) : (
-                          <span className="text-[10px] font-semibold text-rf-vermelho bg-red-50 border border-red-100 px-2 py-0.5 rounded inline-flex items-center gap-1">
-                            <UserCheck className="w-3 h-3" />
+                          <span className="text-[10px] font-semibold text-rf-green bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded inline-flex items-center gap-1">
+                            <UserCheck className="w-3 h-3 text-rf-green" />
                             Banco de Talentos
                           </span>
                         )}
                       </div>
 
                       {/* Nome do Candidato */}
-                      <h4 className="text-xs font-bold text-rf-cinza mb-1 truncate">
+                      <h4 className="text-xs font-bold text-gray-900 mb-1 truncate">
                         {candidato.nome}
                       </h4>
 
                       {/* Informações de Localização e Contato */}
                       <div className="space-y-1 text-[11px] text-gray-500 mb-3">
                         <div className="flex items-center gap-1 truncate">
-                          <MapPin className="w-3 h-3 text-gray-400 shrink-0" />
+                          <MapPin className="w-3.5 h-3.5 text-gray-400 shrink-0" />
                           <span>
                             {candidato.bairro}, {candidato.cidade}
                           </span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <Phone className="w-3 h-3 text-gray-400 shrink-0" />
+                          <Phone className="w-3.5 h-3.5 text-gray-400 shrink-0" />
                           <span>{candidato.whatsapp}</span>
                         </div>
                       </div>
@@ -263,7 +263,7 @@ export function KanbanFunil({ candidatosIniciais, vagasDisponiveis }: KanbanFuni
                         {/* Link Ver Ficha */}
                         <Link
                           href={`/admin/candidatos/${candidato.id}`}
-                          className="text-[11px] font-semibold text-rf-vermelho hover:underline flex items-center gap-1"
+                          className="text-[11px] font-semibold text-rf-green hover:text-rf-gold hover:underline flex items-center gap-1 transition-colors"
                         >
                           <span>Ficha</span>
                           <ExternalLink className="w-3 h-3" />

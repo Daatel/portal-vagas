@@ -86,7 +86,7 @@ export default async function CandidatoDetailPage({ params }: CandidatoDetailPag
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <Link
           href="/admin/candidatos"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-500 hover:text-rf-vermelho transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-500 hover:text-rf-green transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           Voltar para o Funil de Candidatos
@@ -109,7 +109,7 @@ export default async function CandidatoDetailPage({ params }: CandidatoDetailPag
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6 border-b border-gray-100">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
+              <span className="text-xs font-bold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-100">
                 Etapa: {candidato.etapa_funil}
               </span>
               {vagaTitulo ? (
@@ -118,7 +118,7 @@ export default async function CandidatoDetailPage({ params }: CandidatoDetailPag
                 </span>
               ) : null}
             </div>
-            <h1 className="text-2xl md:text-3xl font-extrabold text-rf-cinza">
+            <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900">
               {candidato.nome}
             </h1>
           </div>
@@ -148,7 +148,7 @@ export default async function CandidatoDetailPage({ params }: CandidatoDetailPag
           </div>
 
           <div className="flex items-center gap-2.5 text-gray-700">
-            <Mail className="w-4 h-4 text-blue-600 shrink-0" />
+            <Mail className="w-4 h-4 text-rf-gold shrink-0" />
             <div>
               <span className="text-gray-400 block text-[10px] uppercase font-bold">E-mail</span>
               <span className="font-semibold truncate">{candidato.email || 'Não informado'}</span>
@@ -156,7 +156,7 @@ export default async function CandidatoDetailPage({ params }: CandidatoDetailPag
           </div>
 
           <div className="flex items-center gap-2.5 text-gray-700">
-            <MapPin className="w-4 h-4 text-rf-vermelho shrink-0" />
+            <MapPin className="w-4 h-4 text-rf-green shrink-0" />
             <div>
               <span className="text-gray-400 block text-[10px] uppercase font-bold">Bairro e Cidade</span>
               <span className="font-semibold">{candidato.bairro}, {candidato.cidade}</span>
@@ -178,8 +178,8 @@ export default async function CandidatoDetailPage({ params }: CandidatoDetailPag
         <div className="lg:col-span-2 space-y-8">
           {/* Apresentação Pessoal / Pergunta Aberta */}
           <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-            <h3 className="text-sm font-bold text-rf-cinza mb-3 flex items-center gap-2">
-              <FileText className="w-4 h-4 text-rf-vermelho" />
+            <h3 className="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2">
+              <FileText className="w-4 h-4 text-rf-green" />
               Apresentação e Motivação do Candidato
             </h3>
             <div className="p-4 bg-gray-50 rounded-xl border border-gray-100 text-xs text-gray-700 leading-relaxed whitespace-pre-line italic">
@@ -190,7 +190,7 @@ export default async function CandidatoDetailPage({ params }: CandidatoDetailPag
           {/* Respostas de Triagem da Vaga */}
           {perguntasDaVaga.length > 0 && (
             <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-              <h3 className="text-sm font-bold text-rf-cinza mb-4 flex items-center gap-2">
+              <h3 className="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-emerald-600" />
                 Respostas das Perguntas de Triagem
               </h3>
@@ -208,12 +208,12 @@ export default async function CandidatoDetailPage({ params }: CandidatoDetailPag
                           {p.texto}
                         </span>
                         {p.eliminatoria && (
-                          <span className="text-[10px] text-rf-vermelho font-bold">
+                          <span className="text-[10px] text-rf-gold font-bold">
                             Critério Eliminatório
                           </span>
                         )}
                       </div>
-                      <span className="px-3 py-1 rounded-lg text-xs font-bold bg-white border border-gray-200 text-rf-cinza">
+                      <span className="px-3 py-1 rounded-lg text-xs font-bold bg-white border border-gray-200 text-gray-900">
                         {resposta}
                       </span>
                     </div>
@@ -226,8 +226,8 @@ export default async function CandidatoDetailPage({ params }: CandidatoDetailPag
           {/* Visualizador de Currículo em PDF (Viewer Embutido) */}
           <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm space-y-4">
             <div className="flex items-center justify-between">
-              <h3 className="text-sm font-bold text-rf-cinza flex items-center gap-2">
-                <FileText className="w-4 h-4 text-rf-vermelho" />
+              <h3 className="text-sm font-bold text-gray-900 flex items-center gap-2">
+                <FileText className="w-4 h-4 text-rf-green" />
                 Currículo em PDF
               </h3>
               {signedPdfUrl && (
@@ -235,7 +235,7 @@ export default async function CandidatoDetailPage({ params }: CandidatoDetailPag
                   href={signedPdfUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs text-rf-vermelho hover:underline font-semibold"
+                  className="inline-flex items-center gap-1.5 text-xs text-rf-green hover:text-rf-gold hover:underline font-semibold transition-colors"
                 >
                   <span>Abrir em nova aba</span>
                   <ExternalLink className="w-3.5 h-3.5" />

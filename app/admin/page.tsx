@@ -47,7 +47,7 @@ export default function AdminDashboardPage() {
       {/* Topo do Dashboard */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-2xl font-extrabold text-rf-cinza tracking-tight">
+          <h1 className="text-2xl font-extrabold text-gray-900 tracking-tight">
             Painel de Recrutamento & Seleção (ATS)
           </h1>
           <p className="text-xs text-gray-500 mt-1">
@@ -57,7 +57,7 @@ export default function AdminDashboardPage() {
 
         <Link
           href="/admin/vagas/nova"
-          className="inline-flex items-center gap-2 px-4 py-2.5 bg-rf-vermelho text-white rounded-lg text-xs font-bold hover:bg-rf-vermelho-escuro transition-colors shadow-sm"
+          className="inline-flex items-center gap-2 px-4 py-2.5 bg-rf-green text-white rounded-lg text-xs font-bold hover:bg-rf-green-light transition-all shadow-sm hover:shadow"
         >
           <PlusCircle className="w-4 h-4" />
           Publicar Nova Vaga
@@ -72,18 +72,18 @@ export default function AdminDashboardPage() {
             <Link
               key={card.href}
               href={card.href}
-              className="group bg-white rounded-2xl border border-gray-200 hover:border-rf-vermelho/50 p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+              className="group bg-white rounded-2xl border border-gray-200 hover:border-rf-gold/60 p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-red-50 text-rf-vermelho flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 text-rf-green flex items-center justify-center">
                     <IconComponent className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] uppercase font-bold text-gray-400 bg-gray-50 px-2 py-0.5 rounded">
                     {card.badge}
                   </span>
                 </div>
-                <h3 className="text-base font-bold text-rf-cinza group-hover:text-rf-vermelho transition-colors mb-2">
+                <h3 className="text-base font-bold text-gray-900 group-hover:text-rf-green transition-colors mb-2">
                   {card.title}
                 </h3>
                 <p className="text-xs text-gray-500 leading-relaxed">
@@ -91,7 +91,7 @@ export default function AdminDashboardPage() {
                 </p>
               </div>
 
-              <div className="pt-4 mt-6 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-rf-vermelho">
+              <div className="pt-4 mt-6 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-rf-green group-hover:text-rf-gold transition-colors">
                 <span>Acessar</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </div>

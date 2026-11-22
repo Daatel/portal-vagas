@@ -58,8 +58,8 @@ export default async function AdminCandidatosPage() {
       {/* Topo da Página */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-2xl font-extrabold text-rf-cinza tracking-tight flex items-center gap-2">
-            <Users className="w-6 h-6 text-rf-vermelho" />
+          <h1 className="text-2xl font-extrabold text-gray-900 tracking-tight flex items-center gap-2">
+            <Users className="w-6 h-6 text-rf-green" />
             Funil de Candidatos (Mini-ATS)
           </h1>
           <p className="text-xs text-gray-500 mt-1">

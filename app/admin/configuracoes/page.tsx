@@ -24,8 +24,8 @@ export default async function AdminConfiguracoesPage() {
       {/* Topo da Página */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-extrabold text-rf-cinza tracking-tight flex items-center gap-2">
-            <Settings className="w-6 h-6 text-rf-vermelho" />
+          <h1 className="text-2xl font-extrabold text-gray-900 tracking-tight flex items-center gap-2">
+            <Settings className="w-6 h-6 text-rf-green" />
             Configurações da Plataforma & LGPD
           </h1>
           <p className="text-xs text-gray-500 mt-1">
@@ -37,22 +37,22 @@ export default async function AdminConfiguracoesPage() {
       {/* Cartões de Parâmetros de Infraestrutura */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
         <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm flex items-start gap-3">
-          <Globe className="w-5 h-5 text-rf-vermelho shrink-0 mt-0.5" />
+          <Globe className="w-5 h-5 text-rf-green shrink-0 mt-0.5" />
           <div>
-            <span className="font-bold text-rf-cinza block">Domínio & Produção</span>
+            <span className="font-bold text-gray-900 block">Domínio & Produção</span>
             <span className="text-gray-500 block mt-0.5 font-mono text-[11px]">
               vagas.rfdis.com.br
             </span>
             <span className="text-[10px] text-emerald-600 font-semibold block mt-1">
-              • Hospedagem Vercel (Edge Network)
+              • Hospedagem Netlify & DNS Locaweb
             </span>
           </div>
         </div>
 
         <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm flex items-start gap-3">
-          <HardDrive className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+          <HardDrive className="w-5 h-5 text-rf-gold shrink-0 mt-0.5" />
           <div>
-            <span className="font-bold text-rf-cinza block">Armazenamento de PDFs</span>
+            <span className="font-bold text-gray-900 block">Armazenamento de PDFs</span>
             <span className="text-gray-500 block mt-0.5 font-mono text-[11px]">
               Bucket: curriculos (Privado)
             </span>
@@ -63,9 +63,9 @@ export default async function AdminConfiguracoesPage() {
         </div>
 
         <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm flex items-start gap-3">
-          <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+          <ShieldCheck className="w-5 h-5 text-rf-green shrink-0 mt-0.5" />
           <div>
-            <span className="font-bold text-rf-cinza block">Proteção Anti-Spam</span>
+            <span className="font-bold text-gray-900 block">Proteção Anti-Spam</span>
             <span className="text-gray-500 block mt-0.5 font-mono text-[11px]">
               Cloudflare Turnstile
             </span>
